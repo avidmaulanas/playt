@@ -1,5 +1,5 @@
 - @videos.each do |video|
-  .col-md-6.col-xs-12.box
+  .col-md-6.col-sm-6.col-xs-12.box
     .box-section.thumbnail        
       = image_tag(video.thumbnail_url, alt: video.title, class: "img-responsive")
       h4 = link_to video.title, link_to_yt(video.yt_id), title: video.title, class: "fancybox fancybox.iframe"

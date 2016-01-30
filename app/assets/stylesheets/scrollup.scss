@@ -6,8 +6,24 @@
   right: 100px;
   display: none;
   text-indent: -9999px;
-  background: asset-url('Up-icon.png') no-repeat;
+  background-color: #fff;
+  background: asset-url('direction.png') no-repeat;
   background-position: center;
-  border: 1px solid #ccc;
+  background-size: cover;
+  border: 2px solid #1E201D;
   border-radius: 5px;
+}
+
+@media screen and (min-width: 320px) {
+	.scrollup {
+		bottom: 90px;
+	  right: 15px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.scrollup {
+		bottom: 90px;
+	  right: 30px;
+	}
 }

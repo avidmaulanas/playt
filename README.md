@@ -24,6 +24,8 @@ Adding your Youtube API key in file `.env`, such as below
 ```
 YOUTUBE_API_KEY=your_api_key
 ```
+Database Adapter
+* The environtment development we use adapter `sqlite`, and for production use adapter `posgresql`
 
 Prepare database
 ```
@@ -31,7 +33,7 @@ $ rake db:create
 $ rake db:migrate
 ```
 
-Running server
+Start server
 ```
 $ rails s
 ```

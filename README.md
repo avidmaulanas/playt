@@ -38,7 +38,7 @@ Start server
 $ rails s
 ```
 
-Open in your browser [http:localhost:3000](http:localhost:3000)
+Open in your browser <a href="http:localhost:3000" target="_blank">http:localhost:3000</a>
 
 
 ## Request a Feature?
@@ -55,4 +55,4 @@ You can request a feature with issue page and use label enhancement. We will rev
 Avid Maulana Saputra
 
 ## License
-Licensed under the [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/)
+Licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>

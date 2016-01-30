@@ -1,5 +1,5 @@
 ## Playt
-Playt is an application built on Ruby on Rails. It can add and playing video from Youtube.
+Playt is an application built on Ruby on Rails 4. It can add and playing video from Youtube.
 
 This README is intended to help get you started. Definitely how to use and what functionality it has, etc! 
 
@@ -24,6 +24,8 @@ Adding your Youtube API key in file `.env`, such as below
 ```
 YOUTUBE_API_KEY=your_api_key
 ```
+Database Adapter
+* The environtment development we use adapter `sqlite`, and for production use adapter `posgresql`
 
 Prepare database
 ```
@@ -31,20 +33,26 @@ $ rake db:create
 $ rake db:migrate
 ```
 
-Running server
+Start server
 ```
 $ rails s
 ```
 
-Open in your browser [http:localhost:3000](http:localhost:3000)
+Open in your browser <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
 
 
-### Request a Feature?
+## Request a Feature?
 
 You can request a feature with issue page and use label enhancement. We will review and make it work if possible.
 
-### How to Contribute
+## How to Contribute
 
 * Fork the project
 * Writing new feature or fixing something
 * Perform a pull request in GitHub's web interface.
+
+## Author
+Avid Maulana Saputra
+
+## License
+Licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>

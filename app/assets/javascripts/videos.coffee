@@ -28,6 +28,7 @@ onYouTubePlayerAPIReady = ->
       prevEffect: 'none'
       padding: 0
       margin: 50
+      fitToView: false
       beforeShow: ->
         # Find the iframe ID
         id = $.fancybox.inner.find('iframe').attr('id')

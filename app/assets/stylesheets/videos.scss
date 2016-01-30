@@ -16,3 +16,21 @@
 .fancybox-prev {
   left: -60px;
 }
+
+.box-section {
+	a {
+		font-family: Arial;
+		font-weight: bold;
+		font-size: 12px;
+		color: #3c424a;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.videos {
+	.page-header {
+		font-weight: normal;
+	}
+}

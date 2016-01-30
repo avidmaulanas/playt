@@ -26,7 +26,7 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
-
+    
     respond_to do |format|
       if @video.save
         format.html { redirect_to videos_url, notice: 'Video was added.' }

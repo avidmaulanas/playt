@@ -13,7 +13,7 @@ onPlayerReady = (event) ->
 onPlayerStateChange = (event) ->
   # Go to the next video after the current one is finished playing
   if event.data == 0
-    $.fancybox.next()
+    $.fancybox.prev()
   return
 
 # The API will call this function when the page has finished downloading the JavaScript for the player API
@@ -40,5 +40,9 @@ onYouTubePlayerAPIReady = ->
   return
 
 $(document).ready ->
+  onYouTubePlayerAPIReady()
+  return
+
+$(document).bind "page:load page:change", -> 
   onYouTubePlayerAPIReady()
   return

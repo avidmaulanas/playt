@@ -41,18 +41,18 @@ $ rails s
 Open in your browser [http:localhost:3000](http:localhost:3000)
 
 
-### Request a Feature?
+## Request a Feature?
 
 You can request a feature with issue page and use label enhancement. We will review and make it work if possible.
 
-### How to Contribute
+## How to Contribute
 
 * Fork the project
 * Writing new feature or fixing something
 * Perform a pull request in GitHub's web interface.
 
-### Author
+## Author
 Avid Maulana Saputra
 
-### License
+## License
 Licensed under the [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/)

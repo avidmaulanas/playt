@@ -38,7 +38,7 @@ Start server
 $ rails s
 ```
 
-Open in your browser <a href="http:localhost:3000" target="_blank">http:localhost:3000</a>
+Open in your browser <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
 
 
 ## Request a Feature?

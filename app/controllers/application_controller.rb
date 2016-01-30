@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   rescue_from Yt::Errors::ServerError do |exception|
-    redirect_to root_url, alert: exception.message
+    redirect_to root_url, alert: "A request to YouTube API caused an unexpected server error"
   end
 end

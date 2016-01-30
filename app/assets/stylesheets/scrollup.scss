@@ -1,17 +1,8 @@
 .scrollup {
-  width: 40px;
-  height: 40px;
   position: fixed;
   bottom: 100px;
   right: 100px;
   display: none;
-  text-indent: -9999px;
-  background-color: #fff;
-  background: asset-url('direction.png') no-repeat;
-  background-position: center;
-  background-size: cover;
-  border: 2px solid #1E201D;
-  border-radius: 5px;
 }
 
 @media screen and (min-width: 320px) {
@@ -24,6 +15,13 @@
 @media screen and (min-width: 768px) {
 	.scrollup {
 		bottom: 90px;
-	  right: 30px;
+	  right: 34px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.scrollup {
+		bottom: 100px;
+  	right: 100px;
 	}
 }

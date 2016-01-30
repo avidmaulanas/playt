@@ -2,10 +2,12 @@
   width: 40px;
   height: 40px;
   position: fixed;
-  bottom: 60px;
+  bottom: 100px;
   right: 100px;
   display: none;
   text-indent: -9999px;
   background: asset-url('Up-icon.png') no-repeat;
   background-position: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

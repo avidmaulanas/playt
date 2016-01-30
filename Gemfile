@@ -45,6 +45,11 @@ group :development, :test do
   gem 'binding_of_caller'
 end
 
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
 gem 'fancybox2-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'

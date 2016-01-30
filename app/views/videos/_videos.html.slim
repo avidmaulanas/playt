@@ -1,0 +1,11 @@
+- @videos.each do |video|
+  .col-md-6.col-xs-12.box
+    .box-section.thumbnail        
+      = image_tag(video.thumbnail_url, alt: video.title, class: "img-responsive")
+      h4 = link_to video.title, link_to_yt(video.yt_id), title: video.title, class: "fancybox fancybox.iframe"
+      .channel-title.text-muted = video.yt.channel_title
+      
+      - if user_signed_in?
+      	.btn-remove.text-right
+      		= link_to video, data: {confirm: "Are you sure?", toggle: "tooltip"}, method: :delete, title: "Remove"
+      			span.glyphicon.glyphicon-trash.text-danger

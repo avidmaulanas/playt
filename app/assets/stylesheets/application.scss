@@ -12,14 +12,14 @@
  *
  *= require fancybox
  *= require videos
+ *= require infinite-scroll
+ *= require scrollup
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .box-section {
-  font-size: 21px;
-  font-family: "Cambria";
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   padding: 1.5rem;
@@ -118,4 +118,9 @@ body {
   li {
     list-style: none;
   }
+}
+
+.brand {
+  display: inline;
+  vertical-align: middle;
 }

@@ -1,0 +1,8 @@
+h1 = "Hi #{@user.email}"
+
+.form-group
+	label Email
+	input.form-control readonly="readonly" value="#{@user.email}"
+
+.form-group
+	= link_to "Edit", edit_user_path, class: "btn btn-primary"

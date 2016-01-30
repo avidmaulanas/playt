@@ -17,20 +17,24 @@
   left: -60px;
 }
 
+.videos {
+	.page-header {
+		font-weight: normal;
+	}	
+}
+
 .box-section {
-	a {
-		font-family: Arial;
+	h4 {margin-bottom: 0;}
+	a {			
 		font-weight: bold;
-		font-size: 12px;
+		font-size: 14px;
 		color: #3c424a;
 		&:hover {
 			text-decoration: none;
 		}
 	}
-}
 
-.videos {
-	.page-header {
-		font-weight: normal;
+	.channel-title {
+		font-size: 11px;
 	}
-}
+}	

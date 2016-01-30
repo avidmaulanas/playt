@@ -1,0 +1,11 @@
+h1 Edit account
+
+= form_for(@user, url: { action: "update" } ) do |f|
+	.form-group
+	  = f.label :email
+	  = f.text_field :email, required: true, autofocus: true, class: "form-control"
+	.form-group
+  	= f.submit "Save change", class: "btn btn-success"
+
+
+br

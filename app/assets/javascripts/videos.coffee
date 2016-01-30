@@ -46,3 +46,7 @@ $(document).ready ->
 $(document).bind "page:load page:change", -> 
   onYouTubePlayerAPIReady()
   return
+
+$(document).ajaxSuccess ->
+  onYouTubePlayerAPIReady()
+  return

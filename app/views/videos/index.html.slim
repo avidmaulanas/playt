@@ -1,6 +1,7 @@
 - content_for :js_tag
   = javascript_include_tag "http://www.youtube.com/player_api", 'data-turbolinks-track' => true
   = javascript_include_tag "videos", 'data-turbolinks-track' => true
+  = javascript_include_tag "infinite-scroll", 'data-turbolinks-track' => true
 
 
 - if @video.errors.any?
@@ -10,21 +11,19 @@
       li = message
 
 = form_for @video, html: { class: "form-horizontal" } do |f|
-  .form-group
-    = f.label :link, "Youtube link", class: 'control-label col-md-2'
-    .col-md-10
-      = f.text_field :link, class: 'text_field form-control', placeholder: "https://www.youtube.com/watch?v=hrfik3U2U0A"
-  .form-group
-    .col-md-offset-2.col-md-10
-      = f.submit "Add Video", class: 'btn btn-primary'
+  .input-group
+    = f.text_field :link, class: 'text_field form-control', placeholder: "enter youtube link to added: e.g https://www.youtube.com/watch?v=hrfik3U2U0A"
+    span.input-group-btn
+      = f.submit "Add Video", class: 'btn btn-default'
 
 .videos
   h2.page-header Videos
 
   .row
-    - @videos.each do |video|
-      .col-md-6.box
-        .box-section.thumbnail        
-          = image_tag(video.thumbnail_url, alt: video.title, class: "img-responsive")
-          h4 = link_to video.title, link_to_yt(video.yt_id), class: "fancybox fancybox.iframe"
+    .infinite-scroll
+      = render partial: 'videos', object: @videos
 
+    .pagination
+      = link_to_next_page(@videos, 'Next Page', remote: true)
+
+a href="#" class="scrollup" data-toggle="tooltip" data-placement="right" title="To Top"

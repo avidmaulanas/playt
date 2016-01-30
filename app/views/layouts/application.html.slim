@@ -17,6 +17,7 @@ html lang="en"
 		= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
 		= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
 		= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+		= Gon::Base.render_data
 		= javascript_include_tag "application"
 		= yield :js_tag
 
@@ -28,10 +29,22 @@ html lang="en"
 						li class="#{active_class(root_path)}" role="presentation" = link_to "Home", root_path
 						li class="#{active_class(videos_path)}" role="presentation" = link_to "Videos", videos_path
 
-				h3.text-muted Playt
+						- if user_signed_in?
+							li.dropdown
+							  a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+							    = current_user.email
+							    span.caret
+							  ul.dropdown-menu
+							    li = link_to "Account", user_path
+							    li = link_to "Change Password", password_user_path
+							    li = link_to "Logout", destroy_user_session_path, method: :delete
+
+				h3.text-muted 
+					= image_tag "logo.png", alt: "Playt"
+					.brand Playt
 
 			= bootstrap_flash
 			= yield
 
 			footer.footer
-				p Made by Avid Maulana
+				p = link_to image_tag('GitHub-Mark-32px.png'), "https://github.com/avidmaulanas/playt", target: "_blank", title: "Source on GitHub", data: {toggle: "tooltip", placement: "right"}

@@ -15,6 +15,7 @@
     = f.text_field :link, class: 'text_field form-control', placeholder: "enter youtube link to added: e.g https://www.youtube.com/watch?v=hrfik3U2U0A"
     span.input-group-btn
       = f.submit "Add Video", class: 'btn btn-default'
+  span.help-block.text-right = "Please <strong>do not</strong> add inappropriate content.".html_safe
 
 .videos
   h2.page-header Videos

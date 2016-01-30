@@ -1,5 +1,5 @@
 ## Playt
-Playt is an application built on Ruby on Rails. It can add and playing video from Youtube.
+Playt is an application built on Ruby on Rails 4. It can add and playing video from Youtube.
 
 This README is intended to help get you started. Definitely how to use and what functionality it has, etc! 
 

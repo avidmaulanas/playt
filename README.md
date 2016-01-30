@@ -50,3 +50,9 @@ You can request a feature with issue page and use label enhancement. We will rev
 * Fork the project
 * Writing new feature or fixing something
 * Perform a pull request in GitHub's web interface.
+
+### Author
+Avid Maulana Saputra
+
+### License
+Licensed under the [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/)

@@ -1,6 +1,7 @@
 $(document).ready ->
   $('[data-toggle="tooltip"]').tooltip();
-
+  $('.scrollup').hide();
+  
   $(window).scroll ->
     if $(this).scrollTop() > 100
       $('.scrollup').fadeIn()

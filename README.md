@@ -52,10 +52,7 @@ You can request a feature with issue page and use label enhancement. We will rev
 * Perform a pull request in GitHub's web interface.
 
 ## Author
-Avid Maulana Saputra - <a href="https://github.com/avidmaulanas" target="_blank">github/avidmaulanas</a>
-
-## Contributor
-Avid Maulana Saputra - <a href="https://github.com/avidmaulanas" target="_blank">github/avidmaulanas</a>
+Avid Maulana Saputra
 
 ## License
 Licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>

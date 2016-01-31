@@ -11,10 +11,7 @@ class Video < ActiveRecord::Base
   	video = Yt::Video.new url: self.link
   	self.yt_id = video.id
   	self.title = video.title
-  	self.thumbnail_url = video.thumbnail_url(:medium)
-  end
-
-  def yt
-  	Yt::Video.new url: self.link
+    self.thumbnail_url = video.thumbnail_url(:medium)
+  	self.channel_title = video.channel_title
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130101843) do
+ActiveRecord::Schema.define(version: 20160131014727) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160130101843) do
     t.string   "title"
     t.string   "thumbnail_url"
     t.string   "yt_id"
+    t.string   "channel_title"
   end
 
 end

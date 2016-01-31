@@ -3,7 +3,7 @@
     .box-section.thumbnail        
       = image_tag(video.thumbnail_url, alt: video.title, class: "img-responsive")
       h4 = link_to video.title, link_to_yt(video.yt_id), title: video.title, class: "fancybox fancybox.iframe"
-      .channel-title.text-muted = video.yt.channel_title
+      .channel-title.text-muted = video.channel_title
       
       - if user_signed_in?
       	.btn-remove.text-right

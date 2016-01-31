@@ -4,6 +4,10 @@ class VideosController < ApplicationController
   before_action :set_loader_path, only: [:index]
   before_action :authenticate_user!, only: [:destroy]
 
+  rescue_from Yt::Errors::ServerError do |exception|
+    redirect_to videos_url, alert: "Unable to connect to YouTube"
+  end
+
   # GET /videos
   # GET /videos.json
   def index

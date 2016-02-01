@@ -1,7 +1,4 @@
-$(document).ready ->
-  $('[data-toggle="tooltip"]').tooltip();
-  $('.scrollup').hide();
-  
+scrollUp = ->
   $(window).scroll ->
     if $(this).scrollTop() > 100
       $('.scrollup').fadeIn()
@@ -13,5 +10,16 @@ $(document).ready ->
     false
   return
 
+$(document).ready ->
+  $('[data-toggle="tooltip"]').tooltip();
+  $('.scrollup').hide();
+  scrollUp()
+  return
+
+$(document).bind "page:load page:change", ->
+  scrollUp()
+  return
+
 $(document).ajaxSuccess ->
   $('[data-toggle="tooltip"]').tooltip();
+  return

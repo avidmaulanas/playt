@@ -38,7 +38,7 @@ class VideosController < ApplicationController
   # DELETE /videos/1.json
   def destroy
     @video.destroy
-    redirect_to videos_url, notice: "<strong>#{@video.title}</strong>".html_safe + ' was removed.'
+    redirect_to playback_videos_url, notice: "<strong>#{@video.title}</strong>".html_safe + ' was removed.'
   end
 
   def playback

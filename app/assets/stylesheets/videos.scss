@@ -20,12 +20,23 @@
 .videos {
 	.page-header {
 		font-weight: normal;
-	}	
+	}
+
+  h4 {
+    a {
+      font-weight: bold;
+      font-size: 14px;
+      color: #3c424a;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .box-section {
 	h4 {margin-bottom: 0;}
-	a {			
+	a {
 		font-weight: bold;
 		font-size: 14px;
 		color: #3c424a;
@@ -37,4 +48,4 @@
 	.channel-title {
 		font-size: 11px;
 	}
-}	
+}

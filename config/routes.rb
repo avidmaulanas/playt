@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'home#index'
-  
-  resources :videos, only: [:index, :create, :destroy]
+
+  resources :videos, only: [:index, :create, :destroy] do
+    collection do
+      get 'playback', to: "videos#playback"
+    end
+  end
 
   resource :user, only: [:show, :edit, :update] do
     get 'password' => 'users#password'
@@ -11,13 +15,13 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, skip: [:sessions] #, controllers: { omniauth_callbacks: "omniauth_callbacks" }
-  
+
   as :user do
     get 'asup' => 'devise/sessions#new', as: :new_user_session
     post 'asup' => 'devise/sessions#create', as: :user_session
     delete 'kaluar' => 'devise/sessions#destroy', as: :destroy_user_session
   end
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

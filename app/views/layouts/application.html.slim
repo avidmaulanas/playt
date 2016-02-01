@@ -30,8 +30,9 @@ html lang="en"
 						li class="#{active_class(videos_path)}" role="presentation" = link_to "Videos", videos_path
 
 						- if user_signed_in?
+							li class="#{active_class(playback_videos_path)}" role="presentation" = link_to "Playback", playback_videos_path
 							li.dropdown
-							  a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+							  a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
 							    = current_user.email
 							    span.caret
 							  ul.dropdown-menu
@@ -39,7 +40,7 @@ html lang="en"
 							    li = link_to "Change Password", password_user_path
 							    li = link_to "Logout", destroy_user_session_path, method: :delete
 
-				h3.text-muted 
+				h3.text-muted
 					= image_tag "logo.png", alt: "Playt", class: "img-brand"
 					.brand Playt
 

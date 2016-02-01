@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:destroy]
-  before_action :set_videos, only: [:index, :create]
+  before_action :set_videos, only: [:index, :create, :playback]
   before_action :set_loader_path, only: [:index]
   before_action :authenticate_user!, only: [:destroy]
 
@@ -35,6 +35,9 @@ class VideosController < ApplicationController
     redirect_to videos_url, notice: "<strong>#{@video.title}</strong>".html_safe + ' was removed.'
   end
 
+  def playback
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_video
@@ -43,6 +46,7 @@ class VideosController < ApplicationController
 
     def set_videos
       @videos = Video.all.page(params[:page]).per(6)
+      @videos_size = Video.all.size
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

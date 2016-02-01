@@ -18,7 +18,8 @@
   span.help-block.text-right = "Please <strong>do not</strong> add inappropriate content.".html_safe
 
 .videos
-  h2.page-header Videos
+  h2.page-header
+    | Videos (#{@videos_size})
 
   .row
     .infinite-scroll
@@ -27,4 +28,4 @@
     .pagination
       = link_to_next_page(@videos, 'Next Page', remote: true)
 
-      
+

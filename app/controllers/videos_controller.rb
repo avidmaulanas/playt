@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:destroy]
-  before_action :set_videos, only: [:index, :create, :playback]
+  before_action :set_videos, only: [:index, :create]
+  before_action :set_playback_videos, only: [:playback]
   before_action :set_loader_path, only: [:index]
   before_action :authenticate_user!, only: [:destroy]
 
@@ -47,6 +48,11 @@ class VideosController < ApplicationController
     def set_videos
       @videos = Video.all.page(params[:page]).per(6)
       @videos_size = Video.all.size
+    end
+
+    def set_playback_videos
+      @videos = Video.all
+      @videos_size = @videos.size
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

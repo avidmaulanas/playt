@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   end
 
   def set_role
-    self.role = "regular" if self.id > 1
+    self.role = "regular"
   end
 end

@@ -20,12 +20,17 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
 
-    respond_to do |format|
-      if @video.save
-        format.html { redirect_to videos_url, notice: 'Video was added.' }
-      else
-        format.html { render :index }
+    if cookies[:request_count].to_i < 3 or user_signed_in?
+      respond_to do |format|
+        if @video.save
+          cookies[:request_count] = { value: cookies[:request_count].to_i + 1, expires: 6.hour.from_now }
+          format.html { redirect_to videos_url, notice: 'Video was added.' }
+        else
+          format.html { render :index }
+        end
       end
+    else
+      redirect_to videos_url, alert: 'Ups! Sorry.. Your allowed request only 3 times.'
     end
   end
 

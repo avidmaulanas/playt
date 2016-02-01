@@ -51,7 +51,7 @@ class VideosController < ApplicationController
     end
 
     def set_videos
-      @videos = Video.all.page(params[:page]).per(6)
+      @videos = Video.all.page(params[:page]).per(9)
       @videos_size = Video.all.size
     end
 

@@ -1,0 +1,22 @@
+= form_for @playlist do |f|
+  - if @playlist.errors.any?
+    .alert.alert-danger role="alert"
+      a.close aria-label="close" data-dismiss="alert" href="#"  &times;
+      - @playlist.errors.full_messages.each do |message|
+        li = message
+
+  .form-group.required
+    = f.label :name, class: "label-control required"
+    = f.text_field :name, class: "form-control"
+
+  .form-group.required
+    = f.label :privacy, class: "label-control required"
+    label.radio-inline
+      = f.radio_button :privacy, "public"
+      | Public
+    label.radio-inline
+      = f.radio_button :privacy, "private"
+      | Private
+
+  .form-group
+    = f.submit class: "btn btn-primary"

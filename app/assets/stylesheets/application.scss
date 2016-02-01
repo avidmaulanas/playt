@@ -133,15 +133,20 @@ body {
 
 .btn {
   border: 0;
-} 
+}
 
 .btn-default {
   border: 1px solid #ccc !important;
 }
 
-.nav-pills > li.active > a, 
-.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
   background-color: #0893F3;
+}
+
+.label-control.required:after {
+  content:"*";
+  color:red;
 }

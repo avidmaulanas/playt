@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @playlist.name
+p
+  strong Privacy:
+  = @playlist.privacy
+p
+  strong User:
+  = @playlist.user
+
+= link_to 'Edit', edit_playlist_path(@playlist)
+'|
+= link_to 'Back', playlists_path

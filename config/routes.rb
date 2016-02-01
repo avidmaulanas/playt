@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :playlists
   root 'home#index'
 
   resources :videos, only: [:index, :create, :destroy] do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201130816) do
+ActiveRecord::Schema.define(version: 20160201204417) do
 
   create_table "playlists", force: :cascade do |t|
     t.string   "name"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20160201130816) do
     t.string   "thumbnail_url"
     t.string   "yt_id"
     t.string   "channel_title"
+    t.integer  "playlist_id"
   end
+
+  add_index "videos", ["playlist_id"], name: "index_videos_on_playlist_id"
 
 end

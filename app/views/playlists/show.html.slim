@@ -1,14 +1,10 @@
-p#notice = notice
+h1.page-header Playlist
 
 p
-  strong Name:
-  = @playlist.name
-p
-  strong Privacy:
-  = @playlist.privacy
-p
-  strong User:
-  = @playlist.user
+  h4
+  	strong = @playlist.name
+  span.small.text-muted 
+  	= playlist_info(@playlist)
 
 = link_to 'Edit', edit_playlist_path(@playlist)
 '|

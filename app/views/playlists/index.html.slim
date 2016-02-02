@@ -1,25 +1,24 @@
-h1 Listing playlists
+- content_for :css_tag
+  = stylesheet_link_tag "playlists", :media => "all"
 
-table
-  thead
-    tr
-      th Name
-      th Privacy
-      th User
-      th
-      th
-      th
+.btn-new-playlist.pull-right 
+  = link_to 'New Playlist', new_playlist_path, class: "btn btn-default"
 
-  tbody
-    - @playlists.each do |playlist|
-      tr
-        td = playlist.name
-        td = playlist.privacy
-        td = playlist.user
-        td = link_to 'Show', playlist
-        td = link_to 'Edit', edit_playlist_path(playlist)
-        td = link_to 'Destroy', playlist, data: {:confirm => 'Are you sure?'}, :method => :delete
+h1 Playlists
 
-br
+hr
 
-= link_to 'New Playlist', new_playlist_path
+.playlists
+  - @playlists.each do |playlist|
+    .row
+      .col-md-8.col-sm-8.col-xs-12
+        h4 
+          strong = playlist.name
+        span.small.text-muted 
+          = playlist_info(playlist)
+      .btn-action-playlist.col-md-4.col-sm-4.col-xs-12
+        = link_to 'Edit', edit_playlist_path(playlist), class: "btn btn-info"
+        '
+        = link_to 'Remove', playlist, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger"
+
+

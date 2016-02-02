@@ -6,6 +6,14 @@ class User < ActiveRecord::Base
 
   before_create :set_role
 
+  def self.current
+    Thread.current[:user]
+  end
+
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
+  
   def has_role?(role)
     self.role.eql?(role)
   end

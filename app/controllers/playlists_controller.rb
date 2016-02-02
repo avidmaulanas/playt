@@ -1,10 +1,15 @@
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   # GET /playlists
   # GET /playlists.json
   def index
-    @playlists = Playlist.all
+    @playlists = if user_signed_in? 
+      Playlist.current_user
+    else
+      Playlist.privacy_public
+    end
   end
 
   # GET /playlists/1
@@ -25,14 +30,13 @@ class PlaylistsController < ApplicationController
   # POST /playlists.json
   def create
     @playlist = Playlist.new(playlist_params)
+    @playlist.user_id = current_user.id
 
     respond_to do |format|
       if @playlist.save
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully created.' }
-        format.json { render :show, status: :created, location: @playlist }
+        format.html { redirect_to @playlist, notice: "Playlist #{@playlist.name} was successfully created." }
       else
         format.html { render :new }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +46,9 @@ class PlaylistsController < ApplicationController
   def update
     respond_to do |format|
       if @playlist.update(playlist_params)
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully updated.' }
-        format.json { render :show, status: :ok, location: @playlist }
+        format.html { redirect_to request.referer, notice: 'Playlist was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +59,6 @@ class PlaylistsController < ApplicationController
     @playlist.destroy
     respond_to do |format|
       format.html { redirect_to playlists_url, notice: 'Playlist was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -69,6 +70,6 @@ class PlaylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def playlist_params
-      params.require(:playlist).permit(:name, :privacy, :user_id)
+      params.require(:playlist).permit(:name, :privacy)
     end
 end

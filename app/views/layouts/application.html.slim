@@ -12,6 +12,7 @@ html lang="en"
 			= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
 			= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"
 		= stylesheet_link_tag "application", :media => "all"
+		= yield :css_tag
 		= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
 		= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
 		= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
@@ -27,10 +28,10 @@ html lang="en"
 				nav
 					ul.nav.nav-pills.pull-right
 						li class="#{active_class(root_path)}" role="presentation" = link_to "Home", root_path
-						li class="#{active_class(videos_path)}" role="presentation" = link_to "Videos", videos_path
-
-						- if user_signed_in?
-							li class="#{active_class(playlists_path)}" role="presentation" = link_to "Playlists", playlists_path
+						li class="#{active_class(videos_path)}" role="presentation" = link_to "Videos", videos_path						
+						
+						- if user_signed_in?			
+							li class="#{active_class(playlists_path)}" role="presentation" = link_to "Playlists", playlists_path				
 							li class="#{active_class(playback_videos_path)}" role="presentation" = link_to "Playback", playback_videos_path
 							li.dropdown
 							  a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"

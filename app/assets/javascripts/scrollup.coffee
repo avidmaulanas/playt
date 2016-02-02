@@ -17,6 +17,7 @@ $(document).ready ->
   return
 
 $(document).bind "page:load page:change", ->
+  $('[data-toggle="tooltip"]').tooltip();
   scrollUp()
   return
 

@@ -6,7 +6,7 @@ var RemoveVideo = React.createClass({
   render: function() {
     return (
       <div className="btn-remove pull-right">
-        <a href={this.props.videoPath} data-confirm="Are you sure?" data-toggle="tooltip" data-method="delete" title="Remove">
+        <a href={this.props.videoPath} data-confirm="Are you sure?" data-toggle="tooltip" data-method="delete" title="Remove" data-origin="title">
           <span className="glyphicon glyphicon-trash text-danger"></span>
         </a>
       </div>

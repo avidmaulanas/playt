@@ -13,12 +13,11 @@ hr
     .row
       .col-md-8.col-sm-8.col-xs-12
         h4 
-          strong = playlist.name
-        span.small.text-muted 
-          = playlist_info(playlist)
+          strong = link_to playlist.name, playlist
+        = playlist_info(playlist)
       .btn-action-playlist.col-md-4.col-sm-4.col-xs-12
-        = link_to 'Edit', edit_playlist_path(playlist), class: "btn btn-info"
+        = link_to 'Edit', edit_playlist_path(playlist), class: "btn btn-sm btn-info"
         '
-        = link_to 'Remove', playlist, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger"
+        = link_to 'Remove', playlist, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-sm btn-danger"
 
 

@@ -1,11 +1,16 @@
-h1.page-header Playlist
+h4.page-header
+	strong = @playlist.name
+= playlist_info(@playlist)
 
-p
-  h4
-  	strong = @playlist.name
-  span.small.text-muted 
-  	= playlist_info(@playlist)
+- if @video.errors.any?
+  .alert.alert-danger role="alert"
+    a.close aria-label="close" data-dismiss="alert" href="#"  &times;
+    - @video.errors.full_messages.each do |message|
+      li = message
 
-= link_to 'Edit', edit_playlist_path(@playlist)
-'|
-= link_to 'Back', playlists_path
+= form_for @video, html: { class: "form-horizontal" } do |f|
+  .input-group
+    = f.text_field :link, class: 'text_field form-control', placeholder: "enter youtube link to added: e.g https://www.youtube.com/watch?v=hrfik3U2U0A"
+    span.input-group-btn
+      = f.submit "Add Video", class: 'btn btn-default'
+  span.help-block.text-right = "Please <strong>do not</strong> add inappropriate content.".html_safe

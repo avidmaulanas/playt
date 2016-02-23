@@ -1,5 +1,5 @@
 - @videos.each do |video|
-	- video_info = VideoInfo.new(video.link)
+	/ - video_info = VideoInfo.new(video.link)
 	/ .row.video
 	/ 	.box.col-md-12
 			/ = video_info.embed_code(iframe_attributes: { id: 'video' }).html_safe

@@ -21,3 +21,6 @@
 //= require masonry/masonry.min
 //= require masonry/jquery.infinitescroll.min
 //= require scrollup
+//= require videojs/video
+//= require video-init
+//= require youtube/Youtube

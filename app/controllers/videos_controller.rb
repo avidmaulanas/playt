@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:destroy]
-  before_action :set_videos, only: [:index, :create]
+  before_action :set_videos, only: [:index, :show, :create]
   before_action :set_playback_videos, only: [:playback]
   before_action :set_loader_path, only: [:index]
   before_action :authenticate_user!, only: [:destroy]
@@ -15,6 +15,9 @@ class VideosController < ApplicationController
     @video = Video.new
   end
 
+  def show
+    @video = Video.find(params[:id])
+  end
   # POST /videos
   # POST /videos.json
   def create

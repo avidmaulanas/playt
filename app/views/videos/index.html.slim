@@ -1,8 +1,7 @@
 - content_for :js_tag
-  = javascript_include_tag "http://www.youtube.com/player_api", 'data-turbolinks-track' => true
+  / = javascript_include_tag "http://www.youtube.com/player_api", 'data-turbolinks-track' => true
   = javascript_include_tag "videos", 'data-turbolinks-track' => true
   = javascript_include_tag "infinite-scroll", 'data-turbolinks-track' => true
-
 
 - if @video.errors.any?
   .alert.alert-danger role="alert"
@@ -17,8 +16,14 @@
       = f.submit "Add Video", class: 'btn btn-default'
   span.help-block.text-right = "Please <strong>do not</strong> add inappropriate content.".html_safe
 
-.videos
-  h2.page-header
+.videos  
+  .row
+    .col-md-12
+      .embed-responsive.embed-responsive-16by9
+        = videojs_rails sources: { type: "video/youtube", src: 'https://www.youtube.com/watch?v=nyMkLwSyOVQ' }, setup: "{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"#{@videos.first.link}\"}], \"youtube\": { \"playlist\": \"#{@videos.pluck(:yt_id).join(',')}\", \"ytControls\": 2 } }", controls: false, width:"400", id: "video-player", class: "embed-responsive-item"    
+
+
+  h4.page-header
     | Videos (#{@videos_size})
 
   .row

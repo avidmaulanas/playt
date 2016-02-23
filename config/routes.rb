@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :playlists
   root 'home#index'
 
-  resources :videos, only: [:index, :create, :destroy] do
+  resources :videos, only: [:index, :show, :create, :destroy] do
     collection do
       get 'playback', to: "videos#playback"
     end

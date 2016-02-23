@@ -1,0 +1,7 @@
+change();
+$('#video-player').attr('data-setup', "{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"<%= @video.link %>\"}], \"youtube\": { \"playlist\": \"<%= @videos.pluck(:yt_id).join(',')%>\", \"ytControls\": 2 } }");
+
+video.src({"type":"video/youtube", "src":"<%= @video.link %>"});
+video.play();
+video.on('ended', function(){	
+});

@@ -1,19 +1,19 @@
 - @videos.each do |video|
 	- video_info = VideoInfo.new(video.link)
+	/ .row.video
+	/ 	.box.col-md-12
+			/ = video_info.embed_code(iframe_attributes: { id: 'video' }).html_safe
 	.row.video
 		.box.col-md-12
-			= video_info.embed_code(iframe_attributes: { id: 'video' }).html_safe
-/ 	.row.video
-/ 		.box.col-md-12
-/ 			.col-md-4.col-sm-4.col-xs-12
-/ 				= image_tag video.thumbnail_url, alt: video.title, class: "img-responsive thumbnail"
-/ 			.col-md-8.col-sm-8.col-xs-12
-/ 				h4 = link_to video.title, link_to_yt(video.yt_id), class: "fancybox fancybox.iframe"
-/ 				.text-muted = video.channel_title
-/ 				- isAdmin = user_signed_in? ? current_user.has_role?("admin") : false
-/ 				- if isAdmin
-/ 					.btn-remove.pull-right
-/ 						= link_to video_path(video), title: "Remove", method: :delete, data: {confirm: "Are you sure?", toggle: "tooltip"}
-/ 							span.glyphicon.glyphicon-trash.text-danger
+			.col-md-4.col-sm-4.col-xs-12
+				= image_tag video.thumbnail_url, alt: video.title, class: "img-responsive thumbnail"
+			.col-md-8.col-sm-8.col-xs-12
+				h4 = link_to video.title, link_to_yt(video.yt_id), class: "fancybox fancybox.iframe"
+				.text-muted = video.channel_title
+				- isAdmin = user_signed_in? ? current_user.has_role?("admin") : false
+				- if isAdmin
+					.btn-remove.pull-right
+						= link_to video_path(video), title: "Remove", method: :delete, data: {confirm: "Are you sure?", toggle: "tooltip"}
+							span.glyphicon.glyphicon-trash.text-danger
 
-= link_to "Playlist", "http://www.youtube.com/watch_videos?video_ids=#{@videos.pluck(:yt_id).join(',')}"
+/ = link_to "Playlist", "http://www.youtube.com/watch_videos?video_ids=#{@videos.pluck(:yt_id).join(',')}"

@@ -17,10 +17,11 @@
   span.help-block.text-right = "Please <strong>do not</strong> add inappropriate content.".html_safe
 
 .videos  
-  .row
-    .col-md-12
-      .embed-responsive.embed-responsive-16by9
-        = videojs_rails sources: { type: "video/youtube", src: 'https://www.youtube.com/watch?v=nyMkLwSyOVQ' }, setup: "{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"#{@videos.first.link}\"}], \"youtube\": { \"playlist\": \"#{@videos.pluck(:yt_id).join(',')}\", \"ytControls\": 2 } }", controls: false, width:"400", id: "video-player", class: "embed-responsive-item"    
+  - if @videos.present?
+    .row
+      .col-md-12
+        .embed-responsive.embed-responsive-16by9
+          = videojs_rails sources: { type: "video/youtube", src: 'https://www.youtube.com/watch?v=nyMkLwSyOVQ' }, setup: "{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"#{@videos.first.link}\"}], \"youtube\": { \"playlist\": \"#{@videos.pluck(:yt_id).join(',')}\", \"ytControls\": 2 } }", controls: false, width:"400", id: "video-player", class: "embed-responsive-item"    
 
 
   h4.page-header

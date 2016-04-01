@@ -29,6 +29,7 @@ html lang="en"
 					ul.nav.nav-pills.pull-right
 						li class="#{active_class(root_path)}" role="presentation" = link_to "Home", root_path
 						li class="#{active_class(videos_path)}" role="presentation" = link_to "Videos", videos_path						
+						li class="#{active_class(plans_path)}" role="presentation" = link_to "Plans", plans_path						
 						
 						- if user_signed_in?			
 							li class="#{active_class(playlists_path)}" role="presentation" = link_to "Playlists", playlists_path				

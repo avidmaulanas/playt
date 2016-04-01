@@ -10,5 +10,5 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile += %w( videos.js infinite-scroll.js playlists.css 
 	videojs/font/video-js.swf videojs/font/VideoJS.eot videojs/font/VideoJS.svg videojs/font/VideoJS.ttf 
-	videojs/font/VideoJS.woff youtube/Youtube.js )
+	videojs/font/VideoJS.woff youtube/Youtube.js plans.css)
 

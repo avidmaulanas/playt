@@ -1,0 +1,67 @@
+.container
+  .row
+    .col-xs-12.col-md-6
+      .panel.panel-info
+        .panel-heading
+          h3.panel-title
+            | Free
+        .panel-body
+          table.table
+            tr
+              td
+                | 1 Account
+            tr.active
+              td
+                | 1 Project
+            tr
+              td
+                | 100K API Access
+            tr.active
+              td
+                | 100MB Storage
+            tr
+              td
+                | Custom Cloud Services
+            tr.active
+              td
+                | Weekly Reports
+        .panel-footer
+        	= button_tag "Sign Up", class: "btn btn-primary"
+
+    .col-xs-12.col-md-6
+      .panel.panel-primary
+        .panel-heading
+          h3.panel-title
+            | Premium
+        .panel-body
+          .the-price
+            h1
+              = "$#{(@plan.amount / 100)}" 
+              span.subscript= "/month"
+            small = "#{@plan.trial_period_days} days FREE trial"
+          table.table
+            tr
+              td
+                | 1 Account
+            tr.active
+              td
+                | 1 Project
+            tr
+              td
+                | 100K API Access
+            tr.active
+              td
+                | 100MB Storage
+            tr
+              td
+                | Custom Cloud Services
+            tr.active
+              td
+                | Weekly Reports
+        .panel-footer
+        	= form_tag('/subscription_checkout', {method: :post, plan: @plan})
+						= hidden_field_tag :plan_id, @plan.id
+						script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{Rails.configuration.stripe.publishable_key}" data-amount="#{(@plan.amount)}" data-email="customer@example.com" data-currency="#{@plan.currency}" data-image="#{image_path('logo.png')}"
+
+- content_for :css_tag
+	= stylesheet_link_tag "plans"

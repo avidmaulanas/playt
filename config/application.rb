@@ -35,5 +35,9 @@ module Playt
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Stripe
+    config.stripe.publishable_key = ENV["TEST_STRIPE_PUBLISHABLE_KEY"]
+    config.stripe.secret_key      = ENV["TEST_STRIPE_SECRET_KEY"]
   end
 end

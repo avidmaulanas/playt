@@ -21,3 +21,17 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
+
+$('.video-remove').on('click', function(){
+    var id = $(this).data('video')
+    $.ajax({
+        url: "/videos/" + id,
+        method: "DELETE",
+        dataType: 'json',
+        success: function(data){
+            if (data.success){
+                $(this).parents('.video-link').remove();
+            }
+        }
+    });
+});

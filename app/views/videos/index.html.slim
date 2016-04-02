@@ -21,12 +21,11 @@
   h4.page-header
     | Videos (#{@videos_size})
 
-  .row
-    .infinite-scroll
-      = render partial: 'videos', object: @videos
+  .infinite-scroll
+    = render partial: 'videos', object: @videos
 
-    .pagination
-      = link_to_next_page(@videos, '', remote: true)
+  .pagination
+    = link_to_next_page(@videos, '', remote: true)
 
 - content_for :js_tag
   = javascript_include_tag "https://www.youtube.com/iframe_api"

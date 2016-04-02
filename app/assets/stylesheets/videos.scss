@@ -3,36 +3,20 @@
 		font-weight: normal;
 	}
 
-  h4 {
-    a {
+  .video-link {
+    h4 {
       font-weight: bold;
       font-size: 14px;
       color: #3c424a;
-      &:hover {
-        text-decoration: none;
-      }
     }
   }
 
-  .video {
-    padding-bottom: 20px;
+  .video-remove {
+    position: absolute;
+    right: 10px;
+    z-index: 999;
+    display: inline-block;
   }
-}
-
-.box-section {
-	h4 {margin-bottom: 0;}
-	a {
-		font-weight: bold;
-		font-size: 14px;
-		color: #3c424a;
-		&:hover {
-			text-decoration: none;
-		}
-	}
-
-	.channel-title {
-		font-size: 11px;
-	}
 }
 
 .embed-container {

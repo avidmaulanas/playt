@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :set_video, only: [:destroy]
+  before_action :set_video, only: [:show, :destroy]
   before_action :set_videos, only: [:index, :show, :create]
   before_action :set_playback_videos, only: [:playback]
   before_action :set_loader_path, only: [:index]
@@ -15,8 +15,7 @@ class VideosController < ApplicationController
     @video = Video.new
   end
 
-  def show
-    @video = Video.find(params[:id])
+  def show    
   end
   # POST /videos
   # POST /videos.json
@@ -40,8 +39,9 @@ class VideosController < ApplicationController
   # DELETE /videos/1
   # DELETE /videos/1.json
   def destroy
-    @video.destroy
-    redirect_to playback_videos_url, notice: "<strong>#{@video.title}</strong>".html_safe + ' was removed.'
+    status = true #@video.destroy
+    render json: { success: status }
+    # redirect_to videos_url, notice: "<strong>#{@video.title}</strong>".html_safe + ' was removed.'
   end
 
   def playback
@@ -50,7 +50,7 @@ class VideosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_video
-      @video = Video.find(params[:id])
+      @video = Video.find_by!(yt_id: params[:id])
     end
 
     def set_videos

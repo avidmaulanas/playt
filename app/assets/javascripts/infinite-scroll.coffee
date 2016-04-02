@@ -2,8 +2,8 @@ setContainer = ->
   $container = $('.infinite-scroll')
 
   $container.masonry
-    itemSelector: '.box'
-    columnWidth: '.box'
+    itemSelector: '.video'
+    columnWidth: '.video'
 
 
 $(window).load ->
@@ -22,13 +22,13 @@ $(document).bind "page:load page:change", ->
   $container = $('.infinite-scroll')
 
   $container.masonry
-    itemSelector: '.box'
-    columnWidth: '.box'
+    itemSelector: '.video'
+    columnWidth: '.video'
 
   $container.infinitescroll {
     navSelector: '.pagination'
     nextSelector: '.pagination a'
-    itemSelector: '.box'
+    itemSelector: '.video'
     loading:
       msgText: ''
       finishedMsg: ''

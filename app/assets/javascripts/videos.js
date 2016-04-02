@@ -1,5 +1,3 @@
-$('.embed-container').html("<%=j embed_video(@video.yt_id, autoplay: true) %>");
-
 var player;
 
 function onYouTubeIframeAPIReady() {

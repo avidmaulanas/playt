@@ -4,8 +4,7 @@
 			.col-md-4.col-sm-4.col-xs-12
 				= image_tag video.thumbnail_url, alt: video.title, class: "img-responsive thumbnail"
 			.col-md-8.col-sm-8.col-xs-12
-				/ h4 = link_to video.title, link_to_yt(video.yt_id), class: "fancybox fancybox.iframe"
-				h4 = link_to video.title, video, remote: true
+				h4 = link_to video.title, video, remote: true, data: {video: video.yt_id}, class: "video-link"
 				.text-muted = video.channel_title
 				- isAdmin = user_signed_in? ? current_user.has_role?("admin") : false
 				- if isAdmin

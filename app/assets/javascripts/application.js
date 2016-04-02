@@ -11,16 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap
 //= require jquery_ujs
-//= require turbolinks
-//= require react
-//= require react_ujs
-//= require components
-//= require fancybox
+//= require bootstrap
 //= require masonry/masonry.min
 //= require masonry/jquery.infinitescroll.min
 //= require scrollup
-//= require videojs/video
-//= require video-init
-//= require youtube/Youtube

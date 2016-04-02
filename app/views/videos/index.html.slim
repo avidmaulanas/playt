@@ -1,8 +1,3 @@
-- content_for :js_tag
-  / = javascript_include_tag "http://www.youtube.com/player_api", 'data-turbolinks-track' => true
-  = javascript_include_tag "videos", 'data-turbolinks-track' => true
-  = javascript_include_tag "infinite-scroll", 'data-turbolinks-track' => true
-
 - if @video.errors.any?
   .alert.alert-danger role="alert"
     a.close aria-label="close" data-dismiss="alert" href="#"  &times;
@@ -20,9 +15,8 @@
   - if @videos.present?
     .row
       .col-md-12
-        .embed-responsive.embed-responsive-16by9
-          = videojs_rails sources: { type: "video/youtube", src: 'https://www.youtube.com/watch?v=nyMkLwSyOVQ' }, setup: "{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"#{@videos.first.link}\"}], \"youtube\": { \"playlist\": \"#{@videos.pluck(:yt_id).join(',')}\", \"ytControls\": 2 } }", controls: false, width:"400", id: "video-player", class: "embed-responsive-item"    
-
+        .embed-container
+          = embed_video(@videos.first.yt_id)
 
   h4.page-header
     | Videos (#{@videos_size})
@@ -34,4 +28,7 @@
     .pagination
       = link_to_next_page(@videos, '', remote: true)
 
-
+- content_for :js_tag
+  = javascript_include_tag "https://www.youtube.com/iframe_api"
+  = javascript_include_tag "videos"
+  = javascript_include_tag "infinite-scroll"

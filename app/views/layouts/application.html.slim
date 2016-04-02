@@ -18,9 +18,7 @@ html lang="en"
 		= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
 		= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
 		= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
-		= Gon::Base.render_data
-		= javascript_include_tag "application"
-		= yield :js_tag
+		= Gon::Base.render_data		
 
 	BODY
 		.container
@@ -55,3 +53,6 @@ html lang="en"
 
 			footer.footer
 				p = link_to image_tag('GitHub-Mark-32px.png'), "https://github.com/avidmaulanas/playt", target: "_blank", title: "Source on GitHub", data: {toggle: "tooltip", placement: "right"}
+
+		= javascript_include_tag "application"
+		= yield :js_tag

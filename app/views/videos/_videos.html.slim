@@ -1,4 +1,4 @@
-- isAdmin = current_user.has_role?("admin")
+- isAdmin = current_user.has_role?("admin") if user_signed_in?
 
 .list-group
 	- @videos.each do |video|

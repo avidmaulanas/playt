@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
   require "stripe"
+  before_action :authenticate_user!
 
   def plans
     @plan = Stripe::Plan.retrieve("premium")

@@ -28,12 +28,12 @@ html lang="en"
 				nav
 					ul.nav.nav-pills.pull-right
 						li class="#{active_class(root_path)}" role="presentation" = link_to "Home", root_path
-						li class="#{active_class(videos_path)}" role="presentation" = link_to "Videos", videos_path						
-						li class="#{active_class(plans_path)}" role="presentation" = link_to "Plans", plans_path						
+						li class="#{active_class(videos_path)}" role="presentation" = link_to "Videos", videos_path											
 						
 						- if user_signed_in?			
 							li class="#{active_class(playlists_path)}" role="presentation" = link_to "Playlists", playlists_path				
 							li class="#{active_class(playback_videos_path)}" role="presentation" = link_to "Playback", playback_videos_path
+							li class="#{active_class(plans_path)}" role="presentation" = link_to "Plans", plans_path
 							li.dropdown
 							  a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
 							    = current_user.email
